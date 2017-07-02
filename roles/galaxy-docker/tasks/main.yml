@@ -35,12 +35,12 @@
 - include: galaxyfirewall.yml
   when: galaxyfirewall
 
-- include: run.yml
-  when: rundockergalaxy
-
 # If a container is not restarted with exactly the same settings. All changes within the container are lost. Therefore addldap runs after run
 - include: addldap.yml
   when: addldap
+
+- include: run.yml
+  when: rundockergalaxy
 
 - include: cronbackupdb.yml
   when: cronbackupdb
