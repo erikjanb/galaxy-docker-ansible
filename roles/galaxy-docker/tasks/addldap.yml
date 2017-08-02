@@ -12,6 +12,7 @@
   vars:
     inspect: !unsafe '{{.State.Running}}'
   register: docker_running
+  ignore_errors: true
 
 - name: Show docker inspection results
   debug:
@@ -21,6 +22,8 @@
 - name: Make sure the docker container is started
   docker_container:
     name: "{{docker_container_name}}"
+    volumes: "{{docker_export_location}}:/export/"
+    image: "{{docker_image}}"
     state: started
   when: not docker_running.stdout | bool
 
