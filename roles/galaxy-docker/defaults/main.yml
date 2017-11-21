@@ -45,9 +45,9 @@ galaxy_docker_environment_file_location: "{{galaxy_docker_docker_user_home}}/gal
 galaxy_docker_export_location: "/data/galaxy/galaxy_storage"
 # If not accessible for all users (--x) then postgres does not work.
 galaxy_docker_export_location_mode: "0755"
-galaxy_docker_container_name: galaxy
+galaxy_docker_container_name: boring-wozniak
 galaxy_docker_provision_container_name: galaxy-provision
-galaxy_docker_container_hostname: boring-wozniak
+galaxy_docker_container_hostname: galaxy-docker
 galaxy_docker_extra_volumes: ""
 galaxy_docker_docker_build_dir: "{{galaxy_docker_docker_user_home}}/docker_build/"
 bgruening_galaxy_stable_version: master
