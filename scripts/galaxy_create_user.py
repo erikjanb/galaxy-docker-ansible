@@ -34,7 +34,7 @@ def create_user(args):
         galaxy = bioblend.galaxy.GalaxyInstance(args.url, args.api)
         galaxy.users.create_local_user(args.galaxy_user.split("@")[0].lower(), args.galaxy_user, args.galaxy_password)
         sys.exit(0)
-    except Exception, err:
+    except Exception as err:
         print("Error creating user: {}".format(err))
         sys.exit(1)
 
